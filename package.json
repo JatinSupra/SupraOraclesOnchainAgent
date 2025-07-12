@@ -1,0 +1,23 @@
+{
+  "name": "supraonchainagent2",
+  "version": "1.0.0",
+  "main": "agent.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx tsx agent.ts"
+  },
+  "author": "Jatin Pandya, DevRel @ Supra",
+  "license": "ISC",
+  "dependencies": {
+    "@types/ws": "^8.18.1",
+    "axios": "^1.10.0",
+    "chalk": "^5.4.1",
+    "dotenv": "^17.2.0",
+    "fs": "^0.0.1-security",
+    "openai": "^5.9.0",
+    "path": "^0.12.7",
+    "readline": "^1.3.0",
+    "supra-l1-sdk": "^4.3.3",
+    "ws": "^8.18.3"
+  }
+}
