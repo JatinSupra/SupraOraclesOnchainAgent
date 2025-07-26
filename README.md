@@ -1,4 +1,4 @@
-# Supra Oracle Onchain Agent
+# Supra Oracles Onchain Agent
 This agent represents the next generation of DeFi AI Agentic Feature showcasing Supra's MoveVM and Oracles Integration Stack:
 
 - Live price feeds from Supra Oracle.
