@@ -8,7 +8,7 @@ This agent represents the next generation of DeFi AI Agentic Feature showcasing 
 - Track performance and analysis history
 
 
-### **Supra Oracle**
+### **Supra Oracles**
 - **REST API**: Fetches live price data and 24h historical data
 - **Supported Pairs**: BTC_USDT, ETH_USDT, SUPRA_USDT, and more
 
