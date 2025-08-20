@@ -1,161 +1,187 @@
-# Supra Oracles Onchain Agent
-This agent represents the next generation of DeFi AI Agentic Feature showcasing Supra's MoveVM and Oracles Integration Stack:
+# Supra Integrated Agent
 
-- Live price feeds from Supra Oracle.
-- GPT 3.5-turbo analyzes market conditions and provides trading recommendation.
-- Every analysis is permanently recorded on Supra as Transaction.
-- Optional auto-trading based on AI confidence levels.
-- Track performance and analysis history
+This Agent represents the next generation of DeFi AI featuring Supra's MoveVM, Threshold AI Oracles, and Automation Stack.
 
+## **Key Features**
 
-### **Supra Oracles**
-- **REST API**: Fetches live price data and 24h historical data
-- **Supported Pairs**: BTC_USDT, ETH_USDT, SUPRA_USDT, and more
+### **AI Threshold Oracle System**
+- **5 Expert AI Agents**: Technical Analyst, Fundamental Analyst, Risk Manager, Macro Analyst, and Quantitative Trader
+- **Consensus-Based Decisions**: Requires 60% agreement and 70% confidence for automation
+- **Investment Execution**: Automatic TestCoin token purchases on any crypto user want to get based on expert consensus.
 
-### **OpenAI GPT Integration**
-- **Model**: GPT-3.5-turbo for intelligent market analysis
-- **Input**: Live prices, historical data, technical indicators
-- **Output**: Trading recommendations with confidence scores and reasoning recomm.
+### **Supra L1**
+- **Live Oracle Data**: Real-time price feeds from Supra Oracle Network
+- **On-Chain Recording**: Every analysis permanently recorded on Supra blockchain
 
-### **Supra SDK Infra**
-- Wallet Creation & Account operations
-- On-chain Record Proof of Every Analysis
-- Real-time SUPRA balance tracking
+## **How It Works**
 
-## Prerequisites
-1. [**Supra x-API Key**](https://docs.supra.com/)
-2. [**OpenAI API Key**](https://platform.openai.com/)
+1. **Market Analysis**: Fetches live data from Supra Oracle and analyzes with GPT.
+2. **Expert Consensus**: 5 AI specialists vote on trading decisions from their expertise
+3. **Automated Execution**: When experts agree, automatically buys with $SUPRA → TestCoin (TestCoin representing any Crypto)
+4. **On-Chain Recording**: All decisions and trades recorded permanently on blockchain
 
+## **Prerequisites**
 
-## **Setup & Running Agent**
+1. [**Supra Oracle API Key**](https://docs.supra.com/) - For live price data
+2. [**OpenAI API Key**](https://platform.openai.com/) - For AI analysis and expert consensus
+
+## **Setup & Installation**
 
 #### **Clone and Install**
-
 ```bash
 git clone https://github.com/JatinSupra/SupraOraclesOnchainAgent
 cd SupraOraclesOnchainAgent
 npm install
 ```
 
-#### **Set Environment Variables**
+#### **Set Environment Variables in .env file**
 
 ```bash
-export SUPRA_ORACLE_API_KEY="your_supra_oracle_api_key_here"
-export OPENAI_API_KEY="your_openai_api_key_here"
+SUPRA_ORACLE_API_KEY="your_supra_oracle_api_key_here"
+OPENAI_API_KEY="your_openai_api_key_here"
 ```
 
 #### **Run the Agent**
 ```bash
-npx tsx agent.ts
+npm start
 ```
 
-> **NOTE:** *The Agent will Automatically Create a new Supra testnet account (saved to `account.json`) & Connect to Supra testnet along with Initializing Oracle and GPT services*
+> **NOTE:** The agent automatically creates a Supra testnet account (saved to `account.json`) and connects to all services.
 
-## Commands Reference
+## **Commands Reference**
 
-#### `analyze BTC/ETH/SUPRA`
+### `analyze btc` / `analyze eth` / `analyze sol`
 
-1. Fetches live price data from Supra Oracle
-2. Retrieves 24h historical data for technical analysis
-3. Uses GPT-3.5-turbo to analyze market conditions
-4. Records the analysis as a blockchain transaction
-5. If auto-trading is enabled, executes trades based on confidence
-
+Performs comprehensive AI analysis with expert consensus:
 
 ```bash
-🤖 Command to Agent> analyze BTC
+Your Commands> analyze eth
 
-🔍 === ANALYZING BTC_USDT ===
-🔄 Fetching live data for BTC_USDT...
-✅ Live data fetched: BTC_USDT = $117,778.00
-📊 Fetching 24h historical data for BTC_USDT...
-🤖 GPT analyzing market data...
-✅ GPT analysis completed
+=== ANALYZING ETH_USDT ===
+Fetching live data for ETH_USDT...
+✅ Live data: ETH_USDT = $4,272.70
+Fetching 24h historical data for ETH_USDT...
+✅ Historical data: 24 data points
+Analyzing market data...
+✅ Analysis completed
+AI THRESHOLD ORACLE panel...
+Each expert analyzing from their specialty...
+Expert votes: 5 BUY, 0 SELL, 0 HOLD
+✅ Decision: BUY (87% confidence)
 
-📊 === PRICE DATA ===
-Current Price: $117,778.00
-24h Change: 4.81%
-24h High: $118,837.07
-24h Low: $113,380.11
+=== PRICE DATA ===
+Current Price: 4272.70
+24h Change: 8.01%
+24h High: 4565.69
+24h Low: 4227.23
 
-🤖 === AI ANALYSIS ===
-Recommendation: 📈 BUY
-Confidence: 75%
-Reasoning: Technical indicators show oversold conditions with potential for recovery
-Target Price: $121,500.00
-Stop Loss: $115,000.00
+=== ANALYSIS ===
+Recommendation: + BUY
+Confidence: 87%
+Reasoning: Strong positive momentum indicated by significant 24-hour price increase
 
-⛓️ Recording analysis on Supra blockchain...
-✅ Analysis recorded on-chain
-🔗 Transaction: https://testnet.suprascan.io/tx/0xd54915c680aee531...
+=== AI THRESHOLD Oracle ANALYSIS ===
+┌─────────────────────────┬──────────┬────────────┬──────────────────────────────────┐
+│ Expert                  │ Decision │ Confidence │ Reasoning                        │
+├─────────────────────────┼──────────┼────────────┼──────────────────────────────────┤
+│ Technical Analyst       │ BUY      │ 85%        │ Strong positive momentum indica... │
+│ Fundamental Analyst     │ BUY      │ 85%        │ Positive market sentiment driv... │
+│ Risk Manager           │ BUY      │ 90%        │ Strong positive momentum and su... │
+│ Macro Analyst          │ BUY      │ 85%        │ Positive market sentiment; stro... │
+│ Quant Trader           │ BUY      │ 90%        │ Strong positive momentum indica... │
+└─────────────────────────┴──────────┴────────────┴──────────────────────────────────┘
+
+Consensus: BUY (100% agreement, 87% confidence)
+Execute Investment: ✅ YES
 ```
 
-#### `show portfolio`
+### `show portfolio`
 
-- SUPRA balance
-- Analysis history count
-- Agent configuration status
-- Recent analysis results
+View your complete trading portfolio and status:
 
 ```bash
-💼 === PORTFOLIO STATUS ===
-SUPRA Balance: 500.00 SUPRA
-Analysis History: 3 completed
+=== SUPRA AGENT PORTFOLIO ===
+SUPRA Balance: 41998.05 SUPRA
+SupraAgent Investment: 142.0000 TestCoin
+Investment Progress: 2/2 SUPRA
+Total DCA Swaps: 2
+Automation Status: ✅ ACTIVE
+Analysis History: 1 completed
 Auto-Trading: ✅ ENABLED
-GPT Analysis: ✅ ENABLED
-On-Chain Recording: ✅ ENABLED
+AI THRESHOLD Oracle: ✅ ENABLED
 
-📈 === RECENT ANALYSES ===
-1. BTC_USDT: BUY (75%)
-2. ETH_USDT: SELL (68%)
-3. SUPRA_USDT: HOLD (45%)
+=== RECENT SIGNALS ===
+1. BTC_USDT: BUY (85%) (Experts: BUY)
 ```
 
-#### `check balance`
+### `show tasks`
+
+Monitor active AgentETH automation tasks:
 
 ```bash
-💰 Account Balance: 500.00 SUPRA
+=== SUPRA AGENT AUTOMATION TASKS ===
+Task: supraagent_108210af
+Trigger: SOL_USDT signal
+Budget: 100 SUPRA (20 per swap)
+Interval: 300s between swaps
+Progress: 2/2 SUPRA (100.0%)
+SupraAgent Earned: 142.0000 TestCoin
+Swaps: 2 completed
+Status: COMPLETED
+Next Swap: WAITING
+TX: https://testnet.suprascan.io/tx/0x87ca04d3c27d575d78d7241d417012d52ebb1c60de52f65a55dcbee5108210af
 ```
 
-#### `enable auto trading` / `disable auto trading`
+### `enable auto trading`
 
-- Only executes trades with >70% confidence
-- Records every trade on-chain
-- Configurable position sizes and risk limits
+Activate autonomous trading based on AI expert consensus:
 
 ```bash
-🤖 Auto-trading ENABLED
-⚠️ Auto-trading will execute trades based on AI analysis
-💰 Max investment per trade: $100
+Auto-trading ENABLED
+Auto-trading will invest in TestCoin when experts agree
+Max investment per signal: 400 SUPRA
+TestCoin represents your diversified investment portfolio
 ```
 
-#### `show agent configs`
+### `enable experts`
 
-- GPT analysis status
-- On-chain recording status
-- Auto-trading status
-- Risk management settings
+Toggle the AI Threshold Oracle system:
 
 ```bash
-⚙️ === AGENT CONFIGURATION ===
-{
-  "enableGPTAnalysis": true,
-  "enableOnChainRecording": true,
-  "enableAutoTrading": true,
-  "riskLevel": "MEDIUM",
-  "maxInvestmentPerTrade": 100
-}
+AI THRESHOLD Oracle ENABLED
+5 trading experts will vote on TestCoin investments
 ```
 
-#### `fund account`
+### Additional Commands
 
-- Requests SUPRA tokens from testnet faucet
-- Updates balance automatically
+- `fund account` - Get free testnet SUPRA tokens
+- `config` - View agent configuration
+- `help` - Show all available commands
+- `exit` - Quit the application
 
-```bash
-💸 Requesting testnet funds...
-✅ Funding request submitted - check balance in 30 seconds
-```
 
-#### `help`
-#### `exit`
+## TestCoin Token System
+
+**TestCoin** is the investment token representing your AI-driven portfolio:
+
+- **Automated DCA**: SUPRA tokens convert to TestCoin over time
+- **Expert-Driven**: Only purchased when AI experts reach consensus
+- **Trackable**: Monitor exact TestCoin holdings and conversion progress
+- **Universal**: Represents all crypto investment signals in one token
+
+## 🔗 **Supra Blockchain Features**
+
+- **Testnet Explorer**: [https://testnet.suprascan.io](https://testnet.suprascan.io)
+- **Transaction Tracking**: Every analysis and trade recorded on-chain
+- **Automation System**: Trustless DCA execution via smart contracts
+- **Account Management**: Automatic wallet creation and balance tracking
+
+## **Configuration**
+
+Default settings optimized for automated trading:
+
+- **Risk Level**: MEDIUM
+- **Max Investment**: 400 SUPRA per signal
+- **Confidence Threshold**: 70%
+- **DCA Strategy**: 2 swaps every 2 seconds
+- **Slippage Tolerance**: 4%
