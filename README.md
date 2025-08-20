@@ -169,12 +169,6 @@ AI THRESHOLD Oracle ENABLED
 - **Trackable**: Monitor exact TestCoin holdings and conversion progress
 - **Universal**: Represents all crypto investment signals in one token
 
-## 🔗 **Supra Blockchain Features**
-
-- **Testnet Explorer**: [https://testnet.suprascan.io](https://testnet.suprascan.io)
-- **Transaction Tracking**: Every analysis and trade recorded on-chain
-- **Automation System**: Trustless DCA execution via smart contracts
-- **Account Management**: Automatic wallet creation and balance tracking
 
 ## **Configuration**
 
