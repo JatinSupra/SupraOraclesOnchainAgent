@@ -84,7 +84,7 @@ class SupraOracleService {
       const response = await axios.get(`${this.baseUrl}/latest`, {
         params: { trading_pair: tradingPair },
         headers: { 'x-api-key': this.apiKey },
-        timeout: 10000
+        timeout: 1000000
       });
 
       if (response.data?.instruments?.[0]) {
@@ -123,7 +123,7 @@ class SupraOracleService {
           resolution: 3600
         },
         headers: { 'x-api-key': this.apiKey },
-        timeout: 15000
+        timeout: 150000
       });
 
       if (response.data?.data) {
@@ -809,7 +809,7 @@ class IntelligentSupraAgentTrader {
       enableAutoTrading: false,
       enableAIThresholdOracle: !!openaiApiKey,
       riskLevel: 'MEDIUM',
-      maxInvestmentPerTrade: 400,
+      maxInvestmentPerTrade: 4000,
       confidenceThreshold: 0.7
     };
   }
